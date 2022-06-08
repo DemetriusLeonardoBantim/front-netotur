@@ -5,48 +5,44 @@ import { styles } from './style'
 import { Button } from '../../../components/Button'
 import Modal from "react-native-modal";
 
-function ModalMotorista() {
+function ModalGrupoPermissao() {
   return (
+
     <View style={styles.containerModal}>
+
       <View>
-        <Text>Nome</Text>
+        <Text>Grupo permissao</Text>
         <Input />
       </View>
 
-      <View>
-        <Text>CPF</Text>
-        <Input />
-      </View>
-
-      <View>
-
-        <Text>Placa</Text>
-        <Input />
-      </View>
-      <Button title='Cadastrar motorista' />
+      <Button title='Cadastrar grupo permissão' />
     </View>
   )
 }
 
-export function GerenciarMotorista() {
+
+export function GerenciarGruposDePermissao() {
   const [isModalVisible, setModalVisible] = useState(false)
 
   function handleOpenModal() {
     setModalVisible(true)
   }
+
   return (
     <View style={{ flex: 1, alignItems: 'center' }}>
       <View style={{ marginTop: 100 }}>
-        <Text style={styles.textTitle}>Gerenciar motoristas</Text>
-        <Text style={styles.textSubTitle}>Aqui você pode criar, editar e deleter motoristas</Text>
+        <Text style={styles.textTitle}>Gerenciar grupos permissao</Text>
+        <Text style={styles.textSubTitle}>Aqui você pode criar, editar e deleter grupos permissao</Text>
         <Button title='Cadastrar' onPress={handleOpenModal} />
       </View>
 
+
       <View>
         <Modal isVisible={isModalVisible} onBackdropPress={() => setModalVisible(false)}>
-          <ModalMotorista />
+          <ModalGrupoPermissao />
         </Modal>
       </View>
+
     </View>
   )
 }

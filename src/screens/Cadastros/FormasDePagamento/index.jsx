@@ -5,48 +5,43 @@ import { styles } from './style'
 import { Button } from '../../../components/Button'
 import Modal from "react-native-modal";
 
-function ModalMotorista() {
+function ModalFormasDePagamento() {
   return (
     <View style={styles.containerModal}>
+
       <View>
-        <Text>Nome</Text>
+        <Text>Forma de pagamento</Text>
         <Input />
       </View>
 
-      <View>
-        <Text>CPF</Text>
-        <Input />
-      </View>
-
-      <View>
-
-        <Text>Placa</Text>
-        <Input />
-      </View>
-      <Button title='Cadastrar motorista' />
+      <Button title='Cadastrar forma de pagamento' />
     </View>
   )
 }
 
-export function GerenciarMotorista() {
+
+
+export function GerenciarFormasDePagamento() {
   const [isModalVisible, setModalVisible] = useState(false)
 
   function handleOpenModal() {
     setModalVisible(true)
   }
+
   return (
     <View style={{ flex: 1, alignItems: 'center' }}>
       <View style={{ marginTop: 100 }}>
-        <Text style={styles.textTitle}>Gerenciar motoristas</Text>
-        <Text style={styles.textSubTitle}>Aqui você pode criar, editar e deleter motoristas</Text>
+        <Text style={styles.textTitle}>Gerenciar carros</Text>
+        <Text style={styles.textSubTitle}>Aqui você pode criar, editar e deleter carros</Text>
         <Button title='Cadastrar' onPress={handleOpenModal} />
       </View>
 
       <View>
         <Modal isVisible={isModalVisible} onBackdropPress={() => setModalVisible(false)}>
-          <ModalMotorista />
+          <ModalFormasDePagamento />
         </Modal>
       </View>
+
     </View>
   )
 }

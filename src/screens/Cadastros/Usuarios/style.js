@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
   computerImg: {
     marginTop: 60,
   },
+
   containerModal:{
     height: 400,
     alignItems: "center",
